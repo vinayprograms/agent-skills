@@ -1,0 +1,24 @@
+# Ignore everything by default
+*
+
+# Track repo essentials
+!.gitignore
+!LICENSE
+!README.md
+
+# Track skills, commands, plugins directories
+!skills/
+!skills/**
+!commands/
+!commands/**
+!plugins/
+!plugins/*/
+
+# Ignore plugin management and runtime files
+plugins/blocklist.json
+plugins/cache/
+plugins/data/
+plugins/marketplaces/
+plugins/install-counts-cache.json
+plugins/installed_plugins.json
+plugins/known_marketplaces.json
