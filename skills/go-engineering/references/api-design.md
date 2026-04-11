@@ -32,6 +32,41 @@
 
 12. **JSONSchema bridge for LLM integration.** `Definition.JSONSchema()` converts typed params to raw JSON schema. No import coupling between tool and LLM packages.
 
+## Handler Fields on Config
+
+- **Core behavior, always stateful** → interface. The consumer holds
+  connections, caches, registries — state that belongs on a struct, not
+  in a closure.
+  ```go
+  type Handler interface {
+      Process(ctx context.Context, req *Request) (Response, error)
+  }
+  type Config struct {
+      Handler Handler // consumer implements on a struct with state
+  }
+  ```
+- **Optional callback, often simple** → function field. Method references
+  handle the stateful case; inline functions handle the simple case.
+  ```go
+  type Config struct {
+      OnProgress func(ctx context.Context, pct int)       // often a one-liner
+      Validate   func(ctx context.Context, t string) error // or a method reference
+  }
+  ```
+- **Multiple related methods** → interface. Groups naturally into one
+  implementation struct.
+  ```go
+  type Storage interface {
+      Read(ctx context.Context, key string) ([]byte, error)
+      Write(ctx context.Context, key string, data []byte) error
+      Delete(ctx context.Context, key string) error
+  }
+  ```
+
+The test: if the consumer always needs a struct with state to implement
+it, use an interface. If a one-liner lambda is a legitimate
+implementation, use a function field.
+
 ## Anti-Patterns
 
 | Smell | Fix |

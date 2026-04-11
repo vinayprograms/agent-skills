@@ -22,8 +22,9 @@ These are non-negotiable. Apply them to every function, type, and package.
 
 1. **Interfaces are the gateway.** Every package exposes behavior through interfaces. Concrete types are unexported. One constructor creates the object; everything after flows through the interface. This is what makes code extensible without modification.
 
-2. **Consumers define interfaces.** Define interfaces where they're used, not where they're implemented. The consuming package declares what it needs; the implementing package satisfies it via duck typing. This eliminates import cycles and keeps coupling minimal.
+2. **Consumers define interfaces.** Define interfaces where they're used, not where they're implemented. The consuming package declares what it needs; the implementing package satisfies it via duck typing. This eliminates import cycles, keeps coupling minimal, and avoids forcing consumers to import packages just for interface access.
    - `tools.Scratchpad` is defined in tools, satisfied by `memory.InMemoryStore`
+   - `host.FS` is defined in the host orchestrator, implemented by the consumer's file system adapter
 
 3. **Ready-to-use construction.** Constructors return fully initialized, ready-to-use objects. No `Init()` calls, no `SetX()` after construction, no two-step setup. If it can fail, return `(T, error)`.
 
@@ -163,3 +164,4 @@ Refactoring is precision work. Follow this sequence:
 - **Types belong in their domain package.** `FILResult` belongs in `memory`, not a shared `types` package. Consuming packages import it.
 - **Combine packages when consumers need both.** If importing one without the other is meaningless, merge.
 - **One file per major type.** File name matches the type's purpose.
+- **Map specification capabilities to sub-packages.** When implementing a large specification or protocol, each capability becomes its own sub-package with types and behavior. The top-level orchestrator defines the interfaces it needs from each capability (consumer-defines-interfaces) and wires them together. This makes the orchestrator a thin, one-file aggregator. If the orchestrator is more than one file, capabilities haven't been pushed down far enough.

@@ -32,6 +32,21 @@
 
 13. **Use `%q` for strings in errors/logs.** Handles empty strings clearly and escapes special characters.
 
+14. **Use sub-packages to absorb compound prefixes.** When a flat package
+forces compound names because multiple concepts share the namespace,
+a sub-package lets the package name carry the context:
+
+| Flat (compound) | Sub-package (single word) |
+|---|---|
+| `protocol.EventHandler` | `event.Handler` |
+| `protocol.EventPending` | `event.Pending` |
+| `registry.ServiceEntry` | `service.Entry` |
+| `registry.ServiceStatus` | `service.Status` |
+
+The sub-package earns its keep when it absorbs a prefix from 3+ types
+or constants. Don't create a sub-package for one type — the import
+overhead isn't worth it.
+
 ## Naming Protocol
 
 Names rarely land right on the first attempt. Good names emerge from adversarial debate, not inspection. Follow this sequence every time you name something non-trivial.
