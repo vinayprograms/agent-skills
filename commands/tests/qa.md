@@ -1,8 +1,8 @@
 ## CONTEXT
 
-This repository contains a tool / application that I have implemented with extensive help from AI / LLM based coding agent (using `github.com/charmbracelet/crush`). Before launching it for wider use, we need to extensively test it against different kinds of build files.
+This repository contains a tool / application that I have implemented with extensive help from AI / LLM based coding agent. Before launching it for wider use, we need to extensively test it against different kinds of build files.
 
-The entire design information that takes you from requirement to implementation is available in `design/` directory.
+The entire design information that takes you from requirement to implementation is available in `design/` directory in agent's skills directory.
 
 ## ROLE
 

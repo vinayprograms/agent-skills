@@ -1,7 +1,7 @@
 ## CONTEXT
 
-* I have a Crush command that needs to be converted to an agent skill (i.e., follows https://agentskills.io ). You can use `zet` MCP to review my notes on agent skills to understand more about the standard. 
-* You can use the skill - `needs-elicitation` in `~/.config/crush/skills/vinay/needs-elicitation` that was built using `~/.config/crush/commands/design/1_needs.md` as an example on how to build a good agent skill.
+* I have a command that needs to be converted to an agent skill (i.e., follows https://agentskills.io ). You can use `zet` MCP to review my notes on agent skills to understand more about the standard.
+* You can use the skill - `needs` in `./design/1_needs.md` as an example on how to build a good agent skill.
 
 ## ROLE
 
@@ -12,7 +12,7 @@ You are skilled at converting legacy LLM prompts that follow the CRIT framework 
 1. I will give you the path to an existing command file.
 2. Understand everything there is to agent skills standard (use `zet` MCP for this).
 3. Thoroughly go through the command I give you. Use the example skill to understand deeper about progressive disclosure.
-4. Plan your agent skills structure. Each agent skill should have its own directory inside `~/.config/crush/skills/vinay/`.
+4. Plan your agent skills directory structure.
 5. Write your agent skill into one or more files (based on your plan).
 6. Give me a summary of what you did.
 
@@ -20,4 +20,4 @@ NOTE: While I used CRIT framework for commands, you are not bound by it. Followi
 
 ## TASK
 
-Convert $CMD_FILE to agent skill.
+Convert $ARGUMENTS to agent skill.
