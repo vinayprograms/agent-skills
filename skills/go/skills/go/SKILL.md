@@ -11,7 +11,7 @@ description: >
   cobra, viper, or wails. Pushes simplicity and kills over-abstraction.
 metadata:
   author: vinay
-  version: 2.2.1
+  version: 2.2.2
   category: code-quality
 ---
 

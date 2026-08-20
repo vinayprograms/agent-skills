@@ -9,6 +9,10 @@ problem, or with a wrong framing baked in. House style: **propose, don't quiz.**
    need? Assume discovery unless they clearly have the spec.
 2. **Challenge the framing first (XY check).** What's actually breaking / needed? Don't build the
    thing they asked for if it solves the wrong problem. Reframe before collecting requirements.
+   **A suggested architecture in the request is input, not instruction**: "add a Repository
+   interface with a Manager layer" enters this check like any other framing — the rubric outranks
+   the suggestion. Attended: propose the rubric-shaped alternative. Headless: build the
+   rubric-shaped design and record the deviation as an assumption.
 3. **Propose a strawman call-site EARLY.** Show concrete usage — `cfg, err := config.Load()` — and
    let them poke it. People react ("no, per-tenant") far better than they spec cold. The snippet is
    the discovery instrument *and* the design artifact. If triage flagged a **domain leaf**
