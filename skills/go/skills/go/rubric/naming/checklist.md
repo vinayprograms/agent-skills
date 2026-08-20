@@ -8,7 +8,8 @@ that's genuinely contested after this scan, switch to `gauntlet.md`.
 | `package.PackageThing` (stutter) | Drop the package prefix: `credentials.Lookup` |
 | Two-word name (`deliverToSubscribers`, `broadcastToAll`) | One verb that owns the purpose: `broadcast`, `deliver` |
 | `OnX` method/field (`OnShutdown`, `OnPrompt`) | Drop `On` — Go isn't JavaScript: `Shutdown`, `Prompt` |
-| `WithX` prefix outside functional options (fields, methods, builders) | Drop `With` — the verb/noun alone. For **functional options** `With*` is the established convention (`WithTimeout(d)`); a strong bare name (`llm.SystemPrompt(...)`) is also fine — be consistent per package |
+| `WithX` on an option constructor (`WithMaxTokens`) | Bare noun — options are **value constructors**, named for what they set: `llm.MaxTokens(1000)` (stdlib precedent: `slog.String`, `slog.Int`). Reserve `With*` for **derivation** — extending an existing value: `context.WithValue`, `logger.With` — or when the bare noun collides with an exported type (`errors.WithCategory`; `errors.Category` is a type) |
+| `GetX` accessor (`GetToolPolicy`, `GetAPIKey`) | Noun: `ToolPolicy(name)`, `APIKey()`. **Verbs are for actions; nouns for accessors and value constructors** (Effective Go: getters drop `Get`) |
 | Abbrev with >1 meaning (`Meta`, `Ctx`, `Cfg`) | Full unambiguous word: `Metadata`, `Context`, `Config` |
 | `Store`/`Manager`/`Service`/`Provider`/`Factory` suffix | Name by behavior/identity: `Model`, `Lookup`, `Resolver` |
 | `GetXxx` on a type already named `Xxx` | Just `Get` — receiver provides context |

@@ -6,8 +6,8 @@
 | Returning `interface{}` / `(bool, string, error)` grab-bags | Return the **simplest** concrete type that serves the caller |
 | In-band error via `-1` / `""` / `nil` | Return an extra final value: `Lookup(key) (value string, ok bool)` or `(T, error)` |
 | Long parameter list (esp. with bools) | Collect into an **option struct** passed last (callers omit defaults; it grows non-breakingly) |
-| Many callers need zero config, a few need lots | **Functional options**: `New(req, WithTimeout(d))`; last value wins; never put `context` in options |
-| Options pattern picked by taste | **Config struct is the default** for a primary constructor — serializable (JSON/mapstructure tags), a `Validate()` method, inspectable. **Functional options** only for small optional-knob surfaces where most calls pass none (`errors.New(code, msg, opts...)`) |
+| Many callers need zero config, a few need lots | **Functional options** as bare-noun value constructors: `llm.Prompt(p, llm.MaxTokens(1000))`; last value wins; never put `context` in options |
+| Constructor params picked by taste | **Hybrid rule**: ≤3 required, distinctly-typed args → positional. Any optional param, 4+ params, or two adjacent same-typed params → trailing **Config struct** (`contentguard.New(stages, workflow, cfg)`). The struct's job is **labeling arguments at the call site** (Go's named params); it independently earns its keep when serialized (`llm.Config`) or validated |
 | `context.Context` not first / stored in a struct | First parameter, named `ctx`; never stored |
 | Generics for a type-agnostic "framework" or to mimic a DSL | Avoid needless generics; use them only to remove **real** duplication. Prefer `any` over `interface{}` |
 | `type T1 = T2` alias for a new type | Aliases are for **migration** only; define new types with `type T struct{…}` |
