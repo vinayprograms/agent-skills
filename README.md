@@ -19,9 +19,8 @@ commands/           # Slash commands (invoked via /command-name)
 │   └── tech-requirements.md    # /design:tech-requirements
 ├── docs/
 │   ├── research.md             # /docs:research
-│   ├── zet.md                  # /docs:zet — create a zettel
-│   ├── zet-diagram.md          # /docs:zet-diagram — zettel with diagrams
-│   └── zet-fullsite.md         # /docs:zet-fullsite — full-site zettel generation
+│   └── zet-diagram.md          # /docs:zet-diagram — zettel with diagrams
+│                               # (zet/zet-fullsite consolidated into skills/zettelkasten)
 ├── init/
 │   ├── go.md                   # /init:go — scaffold a Go project
 │   └── python.md               # /init:python — scaffold a Python project
@@ -29,13 +28,17 @@ commands/           # Slash commands (invoked via /command-name)
     └── qa.md                   # /tests:qa — QA test planning
 
 skills/             # Agent skills (specialized behaviors)
-├── brainstorm/     # Balanced-mind reasoning skill
-└── go/             # Go plugin: routed, gated Go engineering workflow + correctness hooks
-    ├── hooks/      # gofmt on write; Stop hook enforcing vet/build/test -race
-    └── skills/go/  # The skill: SKILL.md router → chunks/ (workflow) →
-                    # rubric/ (judgment) → reference/ (domain knowledge, incl.
-                    # material distilled from spf13/go-skills: Cobra/Viper,
-                    # releases, Wails, safe file ops, modern-Go currency)
+├── brainstorm/     # Balanced-mind reasoning
+├── go/             # Go plugin: routed, gated Go engineering workflow + correctness hooks
+│   ├── hooks/      # gofmt on write; Stop hook enforcing vet/build/test -race
+│   └── skills/go/  # The skill: SKILL.md router → chunks/ (workflow) →
+│                   # rubric/ (judgment) → reference/ (domain knowledge, incl.
+│                   # material distilled from spf13/go-skills: Cobra/Viper,
+│                   # releases, Wails, safe file ops, modern-Go currency)
+├── grill-me/       # Interview the user relentlessly about a plan until shared understanding
+├── to-prd/         # Turn conversation context into a PRD, filed as a GitHub issue
+├── to-tasks/       # Break a plan/spec into tracer-bullet vertical-slice tasks
+└── zettelkasten/   # Convert blogs & doc sites into zettels (via the zet MCP)
 ```
 
 ## License
