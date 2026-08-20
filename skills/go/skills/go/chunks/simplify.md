@@ -27,6 +27,9 @@ OVER-REACH / MISREAD / MISSING) before finishing — **and hand it the relevant 
 will try to undo your gateway interface). On a real finding, fix and re-check, bounded to 2
 rounds → escalate to the user. **Skip this for trivial/light changes** (a one-line `fix`, a rename) —
 effort graduation. The verifier exists for high-stakes work, not to tax small edits.
+**No sub-agent support in this harness?** The audit still happens: re-read the revised diff cold in
+a separate pass, as a skeptic who has not seen your reasoning, before finishing. Weaker than a fresh
+agent, but not optional.
 
 ## Produces
 Revised, simplified code.

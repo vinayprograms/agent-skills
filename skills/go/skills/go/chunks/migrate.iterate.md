@@ -31,5 +31,8 @@ Updated ledger; the module's error count reduced; repo committed per unit.
 
 ## Next
 - Errors remain → loop (back to step 1).
+- Sub-agents unavailable in this harness → run the unit yourself following `migrate.unit.md`
+  exactly, then return here, re-reading **only the ledger** — compact/forget the unit's working
+  context between iterations.
 - A unit reports a removed capability needs redesign → `triage.md` (→ new / extract).
 - Error count 0 + final verify green → `document.md` (then the parked-smells cleanup pass).

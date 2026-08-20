@@ -11,7 +11,7 @@ description: >
   cobra, viper, or wails. Pushes simplicity and kills over-abstraction.
 metadata:
   author: vinay
-  version: 2.2.0
+  version: 2.2.1
   category: code-quality
 ---
 
@@ -39,5 +39,17 @@ routed workflow, the design rubric, and domain knowledge distilled from
 
 Do not skim all the files. Bulk dilutes focus; one small file applied *now* is what makes the
 guidance bind.
+
+**Portability — any model, any harness.** The skill assumes nothing beyond the ability to read
+files and run shell commands. If your harness lacks a feature, use the fallback; never skip the step:
+- **No sub-agents** → do the work single-threaded: `decompose` uses `chunks/decompose.checkpoint.md`;
+  for refactor/migrate sweeps, run each unit yourself and re-orient from the ledger between units;
+  for `simplify`'s high-stakes verifier, re-read your revised diff cold in a separate adversarial
+  pass before finishing.
+- **No hooks** → nothing changes: `chunks/verify.md` runs the full baseline manually; the hook is
+  only a backstop.
+- **Small context window** → hold at most SKILL.md + the current chunk + one rubric/reference leaf
+  at a time. Ledger files (`.go-refactor/`, `.go-decompose/`, `.go-migrate/`) are the memory —
+  re-read them, never trust the transcript.
 
 → Load `chunks/triage.md`.

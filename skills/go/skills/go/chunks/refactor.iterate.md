@@ -35,6 +35,9 @@ Updated ledger: one more unit `[x]`, behavior preserved, repo committed green.
 
 ## Next
 - Units remain → loop (back to step 1)
+- Sub-agents unavailable in this harness → run the unit yourself following `refactor.unit.md`
+  exactly (its brief = what step 3 would have assembled), then return here, re-reading **only the
+  ledger** — compact/forget the unit's working context between iterations
 - **A unit can't be done as a refactor** — it needs a boundary to MOVE (→ extract/decompose) or it's
   actually a bug (→ debug): **stop the whole sweep and re-triage, immediately.** The plan is now known
   wrong and later units may depend on the change, so do NOT continue the remaining units. The units
