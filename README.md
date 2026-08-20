@@ -30,13 +30,12 @@ commands/           # Slash commands (invoked via /command-name)
 
 skills/             # Agent skills (specialized behaviors)
 ├── brainstorm/     # Balanced-mind reasoning skill
-├── go/             # Go plugin: routed, gated Go engineering workflow + correctness hooks
-│   ├── hooks/      # gofmt on write; Stop hook enforcing vet/build/test -race
-│   └── skills/go/  # The skill: SKILL.md router → chunks/ (workflow) →
-│                   # rubric/ (judgment) → reference/ (domain knowledge, incl.
-│                   # material distilled from spf13/go-skills: Cobra/Viper,
-│                   # releases, Wails, safe file ops, modern-Go currency)
-└── go-engineering/ # Superseded by go/ — kept as source material
+└── go/             # Go plugin: routed, gated Go engineering workflow + correctness hooks
+    ├── hooks/      # gofmt on write; Stop hook enforcing vet/build/test -race
+    └── skills/go/  # The skill: SKILL.md router → chunks/ (workflow) →
+                    # rubric/ (judgment) → reference/ (domain knowledge, incl.
+                    # material distilled from spf13/go-skills: Cobra/Viper,
+                    # releases, Wails, safe file ops, modern-Go currency)
 ```
 
 ## License

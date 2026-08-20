@@ -9,7 +9,8 @@ captured as notes — do NOT start building without reading them.
 
 - List the notes: `note` MCP → `list_notes(project="go-skill")`
 - On disk: `~/Documents/projects/go-skill/notes/`
-- Refactor source (old skill): `../go-engineering/` (superseded; kept as source material)
+- Refactor source (old skill): `go-engineering` — fully absorbed into this skill; removed from
+  the repo 2026-08-19 (history: git log `skills/go-engineering`)
 
 Working agreement: do NOT one-shot this. Build incrementally, one pressure-tested
 piece at a time.
@@ -21,7 +22,8 @@ merged into this skill. New `reference/` tier holds domain/currency knowledge (m
 http, logging, packages, debugging, cli, release, wails, files); a `spec-review` chunk was
 added; the rubric absorbed the deltas (errgroup over hand-rolled pools, softened coverage,
 config-struct-default options rule informed by agentkit, `With*` allowed on functional
-options). `go-engineering` remains in the repo as superseded source material.
+options). `go-engineering` was fully absorbed and later removed from the repo (recoverable via
+git history).
 
 Also added in v2.0.0: `reference/delve.md` (scriptable live runtime inspection) wired into
 `investigate.debug` step 3 as a graduated escalation and into `verify` step 6 as a graduated

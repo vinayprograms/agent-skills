@@ -1,7 +1,7 @@
 {
   "name": "go",
   "description": "Idiomatic Go design and engineering as a routed, gated workflow (digraph of focused chunks + rubric + domain reference leaves), with a deterministic correctness baseline enforced via hooks. Merges the go-engineering rulebook and spf13/go-skills domain knowledge (Cobra/Viper, releases, Wails, safe file ops, modern-Go currency). Pushes simplicity and kills over-abstraction.",
-  "version": "2.2.2",
+  "version": "2.2.3",
   "author": {
     "name": "vinay"
   }
