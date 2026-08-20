@@ -64,6 +64,9 @@ Compiler-enforced: other modules can't import it. Use it deliberately, not by de
   capability becomes its own sub-package with types and behavior; the top-level orchestrator
   declares the interfaces it needs (consumer-defined) and wires them — a thin, one-file
   aggregator. More than one file of orchestrator = capabilities not pushed down enough.
+  Inside each capability sub-package, name wire types by **role**, not capability:
+  `prompt.Params`, `prompt.Result` — never `PromptParams` in a flat package (the package carries
+  the noun; protobuf/OpenAPI habits of flat `VerbRequest`/`VerbResponse` are the anti-pattern).
 - Sub-packages also absorb compound-name prefixes shared by 3+ types
   (`protocol.EventHandler` → `event.Handler`) — see `../rubric/naming/gauntlet.md`.
 

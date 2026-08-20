@@ -87,6 +87,10 @@ git push origin v1.4.0
 Tag the module root; in a multi-module repo prefix with the module directory (`submod/v1.4.0`).
 Write release notes for humans; link migration guidance for anything deprecated.
 
+**Zero-caller audit before the tag:** grep every exported symbol for real call sites (tests +
+known consumers). An export nobody calls is speculative surface — delete it *before* the tag
+freezes it into the v1 promise; re-add when a real need appears.
+
 ## The proxy is forever: fixing a bad release
 
 **Never delete or re-tag a published version** — the proxy still serves the original, and the

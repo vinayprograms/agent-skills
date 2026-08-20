@@ -16,6 +16,7 @@ that's genuinely contested after this scan, switch to `gauntlet.md`.
 | `LoadFile`/`Parse` as a constructor | Encode source: `FromFile`, `FromTOML` |
 | `NewFoo()` in a multi-constructor package | Drop `New`: `Bash()` not `NewBash()` |
 | Java-ish compounds (`TrustLevel`, `ContentKind`) | Short nouns: `Trust`, `Kind` |
+| One name for two composition semantics | Name by operation: **`Chain`** = fallback dispatch, first-that-answers wins (`credentials.Chain`) vs **`Union`/`Merge`** = fold all inputs into one value (`policy.Union`) — the name is the caller's only clue to the guarantee |
 | Mechanism name (`Exceptions`, `TaintedBy`) | Name by purpose: `Context`, `Origins` |
 | Error string capitalised / trailing period | lowercase, no punctuation (composes mid-sentence) |
 | Renamed a type but not its file/config/tests/comments | Follow every breadcrumb: type → config → fields → file → test → comments |

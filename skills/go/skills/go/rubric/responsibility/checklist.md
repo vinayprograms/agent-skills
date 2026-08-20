@@ -9,7 +9,7 @@ Ask of every type, function, field:
 | **Does it do ONE thing?** | If describing it needs "and", split it (parse AND check AND call = three types). |
 | **Am I switching on a type/string?** | Replace with interface polymorphism. |
 | **Kit or app?** | Kits need extension points; apps can be concrete. |
-| **Can I delete it?** | No callers / a simpler design removes the need → delete. Dead code is a design signal. |
+| **Can I delete it?** | No callers / a simpler design removes the need → delete. Dead code is a design signal. Before a kit release, make this a **sweep**: grep every exported symbol for real callers — zero callers = speculative surface (see `../../reference/release.md`). |
 
 | Smell | Fix |
 |---|---|

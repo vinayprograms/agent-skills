@@ -36,6 +36,12 @@ adding a method to it is a breaking change. Keep such interfaces tiny and stable
 unexported method so only you can implement it (`../../reference/release.md`). The gateway pattern is
 safe here because consumers *call* it, they don't implement it.
 
+**Cross-cutting concerns decorate behind the gateway.** Tracing, retry, and caching wrap the
+concrete type in an **unexported decorator** implementing the same interface, wired in by an
+unexported constructor-time helper (`tracedModel` behind `llm.Model`, applied via `instrument()`).
+The exported surface stays exactly one type — never export the decorator or a second constructor
+for it.
+
 ## 2. App code → concrete
 Apps use and return **concrete types**. "Accept interfaces, return concrete types" is the *app* rule.
 Interfaces here are **discovered, not designed upfront**: write the concrete type first; add an
